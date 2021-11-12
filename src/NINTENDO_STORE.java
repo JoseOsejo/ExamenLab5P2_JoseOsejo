@@ -95,7 +95,7 @@ class CreateAccountPanel extends JPanel
     JLabel userLabel = new JLabel("Username");
     JLabel passwordLabel = new JLabel("Password");
     JLabel ageLabel = new JLabel("Age");
-    JLabel twitterLogoAccount = new JLabel(new ImageIcon("C:/Users/jcoq2/IdeaProjects/ExamenLab5P2_JoseOsejo/QyyndtG3.png"));
+    JLabel nintendoLogoAccount = new JLabel(new ImageIcon("C:/Users/jcoq2/IdeaProjects/ExamenLab5P2_JoseOsejo/logo4.png"));
     public CreateAccountPanel(CardLayout cardLayout, JPanel mainPanel)
     {
         setBackground(Color.BLACK);
@@ -120,7 +120,7 @@ class CreateAccountPanel extends JPanel
         ageLabel.setBounds(10,250,100,25);
         ageLabel.setFont(new Font("TimesRoman",Font.ITALIC,18));
         ageLabel.setForeground(Color.WHITE);
-        twitterLogoAccount.setBounds(250,60,200,200);
+        nintendoLogoAccount.setBounds(250,60,300,300);
         JButton createButton = new JButton("Create");
         createButton.setLayout(null);
         createButton.setBounds(150,350,100,50);
@@ -151,7 +151,7 @@ class CreateAccountPanel extends JPanel
         add(userLabel);
         add(passwordLabel);
         add(ageLabel);
-        add(twitterLogoAccount);
+        add(nintendoLogoAccount);
         add(backButton);
         add(createButton);
     }
