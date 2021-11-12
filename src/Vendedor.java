@@ -10,13 +10,10 @@ private String personajeFavorito;
 private CuentaBancaria cuentaBancaria;
 
     public Vendedor(String nombre, String username, String password
-            ,int edad, double estrellasRecibidas, ArrayList<VideoJuego> videoJuegosEnVenta,
-                    ArrayList<VideoJuego> videoJuegosVendidos, int dineroRecibido,
+            ,int edad, double estrellasRecibidas,int dineroRecibido,
                     String personajeFavorito, CuentaBancaria cuentaBancaria) {
         super(nombre, username, password, edad);
         this.estrellasRecibidas = estrellasRecibidas;
-        this.videoJuegosEnVenta = videoJuegosEnVenta;
-        this.videoJuegosVendidos = videoJuegosVendidos;
         this.dineroRecibido = dineroRecibido;
         this.personajeFavorito = personajeFavorito;
         this.cuentaBancaria = cuentaBancaria;

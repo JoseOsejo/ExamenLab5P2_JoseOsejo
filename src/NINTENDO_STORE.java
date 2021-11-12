@@ -9,8 +9,7 @@ public class NINTENDO_STORE extends JFrame
     private JPanel mainPanel;
     private CardLayout cardLayout;
     private TabPane tabPane;
-    private JRadioButtonMenuItem botonesTipoUsuario;
-   private InitialScreen initialScreen;
+    private InitialScreen initialScreen;
     private CreateAccountPanel createAccountPanel;
     private LogInPanel logingPanel;
 
@@ -19,11 +18,11 @@ public class NINTENDO_STORE extends JFrame
         cardLayout = new CardLayout();
         mainPanel = new JPanel(cardLayout);
         this.setPreferredSize(new Dimension(600,600));
-       initialScreen = new InitialScreen(cardLayout,mainPanel);
+        initialScreen = new InitialScreen(cardLayout,mainPanel);
         mainPanel.add(initialScreen,"Initial");
         createAccountPanel = new CreateAccountPanel(cardLayout,mainPanel);
         mainPanel.add(createAccountPanel,"createAccountPanel");
-       logingPanel = new LogInPanel(cardLayout,mainPanel);
+        logingPanel = new LogInPanel(cardLayout,mainPanel);
         mainPanel.add(logingPanel,"LogInPanel");
 
         add(mainPanel);
@@ -85,45 +84,65 @@ class InitialScreen extends JPanel{
 }
 class CreateAccountPanel extends JPanel
 {
+    JRadioButton tipoAdmin = new JRadioButton("Administrador");
+    JRadioButton tipoComprador = new JRadioButton("Comprador");
+    JRadioButton tipoVendedor = new JRadioButton("Vendedor");
+    ButtonGroup buttonGroup = new ButtonGroup();
     JTextField textName= new JTextField();
-    JTextField textGender= new JTextField();
+    JTextField textCuentaBancaria= new JTextField();
     JTextField textUser= new JTextField();
     JTextField textPassword= new JTextField();
     JTextField textAge= new JTextField();
+    JTextField textPersonajeFav= new JTextField();
+    JLabel personajeFavLabel = new JLabel("Personaje Favorito");
     JLabel nameLabel = new JLabel("Name");
-    JLabel genderLabel = new JLabel("Gender");
+    JLabel cuentaBancariaLabel = new JLabel("Cuenta Bancaria");
     JLabel userLabel = new JLabel("Username");
     JLabel passwordLabel = new JLabel("Password");
     JLabel ageLabel = new JLabel("Age");
-    JLabel nintendoLogoAccount = new JLabel(new ImageIcon("C:/Users/jcoq2/IdeaProjects/ExamenLab5P2_JoseOsejo/logo4.png"));
+    //JLabel nintendoLogoAccount = new JLabel(new ImageIcon("C:/Users/jcoq2/IdeaProjects/ExamenLab5P2_JoseOsejo/logo4.png"));
     public CreateAccountPanel(CardLayout cardLayout, JPanel mainPanel)
     {
         setBackground(Color.BLACK);
         setLayout(null);
-        textName.setBounds(110,50,100,25);
-        textGender.setBounds(110,100,100,25);
-        textUser.setBounds(110,150,100,25);
-        textPassword.setBounds(110,200,100,25);
-        textAge.setBounds(110,250,100,25);
-        nameLabel.setBounds(10,50,100,25);
+        textPersonajeFav.setBounds(300,270,100,25);
+        textName.setBounds(130,80,100,25);
+        textCuentaBancaria.setBounds(300,230,100,25);
+        textUser.setBounds(400,80,100,25);
+        textPassword.setBounds(400,130,100,25);
+        textAge.setBounds(130,130,100,25);
+        personajeFavLabel.setBounds(130,270,200,25);
+        personajeFavLabel.setFont(new Font("TimesRoman",Font.ITALIC,18));
+        personajeFavLabel.setForeground(Color.WHITE);
+        nameLabel.setBounds(70,80,100,25);
         nameLabel.setFont(new Font("TimesRoman",Font.ITALIC,18));
         nameLabel.setForeground(Color.WHITE);
-        genderLabel.setBounds(10,100,100,25);
-        genderLabel.setFont(new Font("TimesRoman",Font.ITALIC,18));
-        genderLabel.setForeground(Color.WHITE);
-        userLabel.setBounds(10,150,100,25);
+        cuentaBancariaLabel.setBounds(140,230,200,25);
+        cuentaBancariaLabel.setFont(new Font("TimesRoman",Font.ITALIC,18));
+        cuentaBancariaLabel.setForeground(Color.WHITE);
+        userLabel.setBounds(300,80,100,25);
         userLabel.setFont(new Font("TimesRoman",Font.ITALIC,18));
         userLabel.setForeground(Color.WHITE);
-        passwordLabel.setBounds(10,200,100,25);
+        passwordLabel.setBounds(300,130,100,25);
         passwordLabel.setFont(new Font("TimesRoman",Font.ITALIC,18));
         passwordLabel.setForeground(Color.WHITE);
-        ageLabel.setBounds(10,250,100,25);
+        ageLabel.setBounds(70,130,100,25);
         ageLabel.setFont(new Font("TimesRoman",Font.ITALIC,18));
         ageLabel.setForeground(Color.WHITE);
-        nintendoLogoAccount.setBounds(250,60,300,300);
+        tipoAdmin.setBounds(200,330,300,50);
+        tipoComprador.setBounds(200,340,300,50);
+        tipoVendedor.setBounds(200,350,300,50);
+        buttonGroup.add(tipoAdmin);buttonGroup.add(tipoComprador);buttonGroup.add(tipoVendedor);
+        tipoAdmin.setBackground(Color.BLACK);
+        tipoVendedor.setBackground(Color.BLACK);
+        tipoComprador.setBackground(Color.BLACK);
+        tipoAdmin.setForeground(Color.WHITE);
+        tipoComprador.setForeground(Color.WHITE);
+        tipoVendedor.setForeground(Color.WHITE);
+        // nintendoLogoAccount.setBounds(250,60,300,300);
         JButton createButton = new JButton("Create");
         createButton.setLayout(null);
-        createButton.setBounds(150,350,100,50);
+        createButton.setBounds(320,480,100,50);
         createButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -133,7 +152,7 @@ class CreateAccountPanel extends JPanel
         });
         JButton backButton = new JButton("Back");
         backButton.setLayout(null);
-        backButton.setBounds(20,350,100,50);
+        backButton.setBounds(170,480,100,50);
         backButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -141,17 +160,21 @@ class CreateAccountPanel extends JPanel
                 cardLayout.show(mainPanel,"Initial");
             }
         });
+        add(personajeFavLabel);
+        add(textPersonajeFav);
         add(textName);
-        add(textGender);
+        add(textCuentaBancaria);
         add(textUser);
         add(textPassword);
         add(textAge);
         add(nameLabel);
-        add(genderLabel);
+        add(cuentaBancariaLabel);
         add(userLabel);
         add(passwordLabel);
         add(ageLabel);
-        add(nintendoLogoAccount);
+        add(tipoAdmin);add(tipoComprador);add(tipoVendedor);
+
+        // add(nintendoLogoAccount);
         add(backButton);
         add(createButton);
     }
