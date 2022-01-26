@@ -62,6 +62,9 @@ private int number;
     public void funcionPrueba(){
         System.out.println("soy pro player:)");
     }
+    public String cmd(){
+        return "soy git bash";
+    }
 
     @Override
     public String toString() {
