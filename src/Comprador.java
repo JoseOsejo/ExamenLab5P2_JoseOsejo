@@ -6,13 +6,15 @@ private ArrayList<VideoJuego>videoJuegosComprados;
 private int dineroParaComprar;
 private String personajeFavorito;
 private CuentaBancaria cuentaBancaria;
+private int numeroPrueba;
 
-    public Comprador(String nombre, String username, String password, int edad, ArrayList<VideoJuego> videoJuegosComprados, int dineroParaComprar, String personajeFavorito, CuentaBancaria cuentaBancaria) {
+    public Comprador(String nombre, String username, String password, int edad, ArrayList<VideoJuego> videoJuegosComprados, int dineroParaComprar, String personajeFavorito, CuentaBancaria cuentaBancaria,int numeroPrueba) {
         super(nombre, username, password, edad);
         this.videoJuegosComprados = videoJuegosComprados;
         this.dineroParaComprar = dineroParaComprar;
         this.personajeFavorito = personajeFavorito;
         this.cuentaBancaria = cuentaBancaria;
+        this.numeroPrueba = numeroPrueba;
     }
 
     public ArrayList<VideoJuego> getVideoJuegosComprados() {
@@ -45,6 +47,14 @@ private CuentaBancaria cuentaBancaria;
 
     public void setCuentaBancaria(CuentaBancaria cuentaBancaria) {
         this.cuentaBancaria = cuentaBancaria;
+    }
+
+    public int getNumeroPrueba() {
+        return numeroPrueba;
+    }
+
+    public void setNumeroPrueba(int numeroPrueba) {
+        this.numeroPrueba = numeroPrueba;
     }
 
     @Override
