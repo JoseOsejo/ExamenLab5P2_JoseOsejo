@@ -59,6 +59,9 @@ private int number;
     public String printPrueba(){
         return "Hola Mundo como estan";
     }
+    public void funcionPrueba(){
+        System.out.println("soy pro player:)");
+    }
 
     @Override
     public String toString() {
